@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/29 14:12:37 by pcartau           #+#    #+#             */
-/*   Updated: 2017/11/29 15:54:15 by pcartau          ###   ########.fr       */
+/*   Created: 2017/11/08 20:12:48 by pcartau           #+#    #+#             */
+/*   Updated: 2017/11/29 15:55:19 by pcartau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static inline int len(void *ptr)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char *tmp;
-	int	i;
+	unsigned char	*dst1;
+	unsigned char	*src1;
+	int				i;
 
-	i= 0;
-	tmp = (unsigned char *)ptr;
-	while (tmp[i])
-		i++;
-	return (i);
-}
-
-void		*ft_realloc(void *ptr, size_t size)
-{
-	int i;
-	void	*dest;
-
-	if (ptr)
+	src1 = (unsigned char *)src;
+	dst1 = (unsigned char *)dst;
+	i = 0;
+	while (n > 0)
 	{
-		dest = malloc(sizeof(void) * size);
-		dest = ft_memcpy(dest, ptr, size);
-		free(ptr);
-		return (dest);
+		dst1[i] = src1[i];
+		i++;
+		n--;
 	}
-		if (!(ptr = malloc(sizeof(void) * size)))
-			return (NULL);
-		return (ptr);
+	return (dst);
 }
