@@ -3,30 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: pcartau <pcartau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 14:12:37 by pcartau           #+#    #+#             */
-/*   Updated: 2017/11/29 15:26:34 by pcartau          ###   ########.fr       */
+/*   Updated: 2017/11/29 16:00:22 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "fillit.h"
 
-static inline int len(void *ptr)
+void				*ft_realloc(void *ptr, size_t size)
 {
-	unsigned char *tmp;
-	int	i;
-
-	i= 0;
-	tmp = (unsigned char *)ptr;
-	while (tmp[i])
-		i++;
-	return (i);
-}
-
-void		*ft_realloc(void *ptr, size_t size)
-{
-	int i;
 	void	*dest;
 
 	if (ptr)
@@ -36,7 +23,7 @@ void		*ft_realloc(void *ptr, size_t size)
 		free(ptr);
 		return (dest);
 	}
-		if (!(ptr = malloc(sizeof(void) * size)))
-			return (NULL);
-		return (ptr);
+	if (!(ptr = malloc(sizeof(void) * size)))
+		return (NULL);
+	return (ptr);
 }
