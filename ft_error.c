@@ -6,13 +6,13 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 14:42:47 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 14:59:52 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/29 15:02:51 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int ft_error(char *str)
+int		ft_error(char *str)
 {
 	int i;
 

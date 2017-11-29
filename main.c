@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 13:49:42 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 15:01:13 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/29 15:03:09 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	str = ft_read(argv[1]);
-	if (!(ft_error(str)))
+	if (ft_error(str) == 0)
 	{
 		ft_putstr("error\n");
 		return (0);
