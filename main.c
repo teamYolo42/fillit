@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 13:49:42 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 14:04:06 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/29 14:32:13 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_read(char *argv)
 {
-	int fd;
-	int ret;
-	char buf[BUF_SIZE + 1];
+	int		fd;
+	int		ret;
+	char	buf[BUF_SIZE + 1];
 
 	fd = open((argv), O_RDONLY);
 	ret = read(fd, buf, BUF_SIZE);
@@ -24,9 +24,10 @@ char	*ft_read(char *argv)
 	return (ft_strdup(buf));
 }
 
-int main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	char *str;
+
 	str = ft_read(argv[1]);
-	return 0;
+	return (0);
 }
