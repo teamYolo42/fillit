@@ -6,7 +6,7 @@
 #    By: asandolo <asandolo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/22 17:55:04 by asandolo          #+#    #+#              #
-#    Updated: 2017/11/29 19:07:49 by asandolo         ###   ########.fr        #
+#    Updated: 2017/11/29 19:24:28 by asandolo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ OBJ = ft_atoi.o ft_bzero.o ft_memcpy.o ft_memset.o \
 			ft_strsub.o ft_strcpy.o ft_strncpy.o ft_strdup.o ft_strcat.o ft_strncat.o \
 			ft_strchr.o ft_strrchr.o ft_strstr.o ft_strnstr.o ft_strjoin.o ft_strsplit.o \
 			ft_isnegativ.o ft_itoa.o ft_strrev.o ft_strtrim.o ft_strlcat.o ft_min.o ft_max.o \
-			ft_lstnew.o ft_lstdel.o ft_lstdelone.o ft_lstadd.o ft_lstiter.o ft_lstmap.o ft_swap.o
+			ft_lstnew.o ft_lstdel.o ft_lstdelone.o ft_lstadd.o ft_lstiter.o ft_lstmap.o
 
 
 all: $(NAME)
