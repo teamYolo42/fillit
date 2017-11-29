@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 13:53:44 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 14:57:20 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/11/29 14:59:42 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@
 
 # define BUF_SIZE 1000
 
-int	ft_error(char *str);
+int		ft_error(char *str);
+
 #endif
