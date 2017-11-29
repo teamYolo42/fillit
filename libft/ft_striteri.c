@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: asandolo <asandolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/29 13:53:44 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 13:58:36 by vgauther         ###   ########.fr       */
+/*   Created: 2017/11/07 11:33:56 by asandolo          #+#    #+#             */
+/*   Updated: 2017/11/14 10:42:46 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_H
-# define LIB_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
-# include <unistd.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# include "libft.h"
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	unsigned int j;
 
-# define BUF_SIZE 1000
-
-#endif
+	j = 0;
+	if (s)
+		while (*s && f)
+			f(j++, s++);
+}

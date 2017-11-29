@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_emptymap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: pcartau <pcartau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 19:18:02 by pcartau           #+#    #+#             */
-/*   Updated: 2017/11/29 13:55:04 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/29 14:48:08 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lib.h"
+#include "fillit.h"
 
 char	*ft_emptymap(int i, int j)
 {
