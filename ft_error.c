@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_error.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 14:42:47 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 14:59:52 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/29 15:03:37 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int ft_error(char *str)
+int	ft_error(char *str)
 {
 	int i;
 
@@ -20,7 +20,7 @@ int ft_error(char *str)
 	while (str[i])
 	{
 		if (str[i] != '\n' && str[i] != '\0' && str[i] != '.' && str[i] != '#')
-			return(0);
+			return (0);
 		i++;
 	}
 	return (1);
