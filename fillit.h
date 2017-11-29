@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 13:53:44 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 14:47:56 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/29 14:57:20 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_H
-# define LIB_H
+#ifndef FILLIT_H
+# define FILLIT_H
 
 # include <stdlib.h>
 # include <string.h>
@@ -20,11 +20,9 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
-# include "libft.h"
+# include "libft/libft.h"
 
 # define BUF_SIZE 1000
 
 int	ft_error(char *str);
-
-
 #endif
