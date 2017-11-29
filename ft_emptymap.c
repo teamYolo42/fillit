@@ -12,30 +12,28 @@
 
 #include "fillit.h"
 
-char	*ft_emptymap(int i, int j)
+char	**ft_emptymap(int size)
 {
-	char	*map;
-	int		k;
-	int		l;
+	char	**tab;
+	int		x;
+	int		y;
 
-	l = i;
-	i = (i * j) + (j + 1);
-	map = (char *)malloc(sizeof(char) * i + 1);
-	j = 0;
-	k = 0;
-	while (j < i - 1)
+	y = 0;
+	if (!(tab = (char **)malloc(sizeof(char *) * (size + 1))))
+		return (NULL);
+	while (y < size)
 	{
-		k++;
-		if (k == l + 1)
+		x = 0;
+		if (!(tab[y] = (char *)malloc(sizeof(char) * size + 1)))
+			return (NULL);
+		while (x < size)
 		{
-			map[j] = '\n';
-			k = 0;
+			tab[y][x] = '.';
+			x++;
 		}
-		else
-			map[j] = '.';
-		j++;
+		tab[y][x] = '\0';
+		y++;
 	}
-	map[j] = '\n';
-	map[j + 1] = '\0';
-	return (map);
+	tab[y] = 0;
+	return (tab);
 }

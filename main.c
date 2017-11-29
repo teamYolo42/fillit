@@ -14,9 +14,9 @@
 
 char	*ft_read(char *argv)
 {
-	int fd;
-	int ret;
-	char buf[BUF_SIZE + 1];
+	int		fd;
+	int		ret;
+	char	buf[BUF_SIZE + 1];
 
 	fd = open((argv), O_RDONLY);
 	ret = read(fd, buf, BUF_SIZE);
@@ -24,9 +24,10 @@ char	*ft_read(char *argv)
 	return (ft_strdup(buf));
 }
 
-int main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	char *str;
+
 	str = ft_read(argv[1]);
-	return 0;
+	return (0);
 }
