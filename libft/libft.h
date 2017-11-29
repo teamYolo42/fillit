@@ -6,7 +6,7 @@
 /*   By: asandolo <asandolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 10:27:54 by asandolo          #+#    #+#             */
-/*   Updated: 2017/11/29 19:08:18 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/11/29 19:25:14 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,5 @@ int					ft_min(int a, int b);
 int					ft_max(int a, int b);
 char				*ft_strrev(char *str);
 void				ft_puttab(char **tab);
-void				ft_swap(char a, char b);
 
 #endif
