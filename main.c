@@ -34,7 +34,7 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	str = ft_read(argv[1]);
-	if (!(ft_error(str)))
+	if (ft_error(str) == 0)
 	{
 		ft_putstr("error\n");
 		return (0);
