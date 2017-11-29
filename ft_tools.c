@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 18:13:51 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 18:24:33 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/29 20:26:45 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,53 @@ int		count_map_min(char *str)
 	while ((size * size) < nbr_de_diese)
 		size++;
 	return (size);
+}
+
+/*
+** ft_dupdup = strdup pour un char **
+*/
+
+char	**ft_dupdup(char **src)
+{
+	int		i;
+	char	**dst;
+
+	i = 0;
+	while (src[i])
+		i++;
+	if (!(src = (char **)malloc(sizeof(char *) * (i + 1))))
+		return (NULL);
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = ft_strdup(src[i]);
+		i++;
+	}
+	return (dst);
+}
+
+int		ft_is_placed(char **map, int num)
+{
+	int x;
+	int y;
+	int nbr;
+
+	y = 0;
+	nbr = 0;
+	while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (ft_isalpha(map[y][x]))
+				nbr++;
+			x++;
+		}
+		y++;
+	}
+	if (num * 4 != nbr)
+		return (0);
+	return (1);
 }
 
 char	ft_last_char(char *str)

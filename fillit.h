@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 13:53:44 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 18:20:06 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/29 20:27:12 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,9 @@ typedef struct		s_etris
 int		ft_error(char *str);
 char	**ft_emptymap(int size);
 char	ft_last_char(char *str);
+int		ft_right(char **tetris, char c);
+int		ft_bottom(char **tetris, char c);
+char	**ft_dupdup(char **src);
+int		ft_is_placed(char **map, int num);
 
 #endif
