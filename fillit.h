@@ -32,5 +32,7 @@ typedef struct		s_etris
 # define BUF_SIZE 1000
 
 int		ft_error(char *str);
+char	**ft_emptymap(int size);
+char	ft_last_char(char *str);
 
 #endif
