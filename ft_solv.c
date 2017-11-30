@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 17:55:26 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 15:55:32 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 18:11:35 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,8 @@ int		can_place(char **tetri, char **map)
 
 char	**ft_pull_tetri(char c, t_tetri *list)
 {
-	int		i;
 	char	**tetri;
 
-	i = 0;
 	while (list->id != c && list->next)
 	{
 		list = list->next;
