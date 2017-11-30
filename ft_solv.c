@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 17:55:26 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 14:31:06 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:43:07 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int		can_place(char **tetri, char **map)
 	return (1);
 }
 
-char	**ft_pull_tetri(char c, t_etris *list)
+char	**ft_pull_tetri(char c, t_tetri *list)
 {
 	int		i;
 	char	**tetri;
@@ -60,11 +60,11 @@ char	**ft_pull_tetri(char c, t_etris *list)
 	{
 		list = list->next;
 	}
-	tetri = list->tetriminos;
+	tetri = list->map;
 	return (tetri);
 }
 
-char	**ft_solv(char *str, int size, char *comb, t_etris *list)
+char	**ft_solv(char *str, int size, char *comb, t_tetri *list)
 {
 	t_variable	v;
 	int			num;
@@ -99,12 +99,13 @@ char	**ft_solve(int size, char *str)
 	int		tab[4];
 	char	**map;
 	char	*plaque;
-	t_etris	*list;
+	t_tetri	*list;
 
 	tab[0] = (ft_last_char(str) - 'A' + 1);
 	tab[1] = 0;
 	tab[2] = 1;
 	tab[3] = 1;
+	list = ft_getpiece(str, ft_last_char(str));
 	plaque = ft_first_comb(ft_last_char(str));
 	map = NULL;
 	while (map == NULL)

@@ -6,7 +6,7 @@
 /*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 18:32:50 by pcartau           #+#    #+#             */
-/*   Updated: 2017/11/30 14:54:52 by pcartau          ###   ########.fr       */
+/*   Updated: 2017/11/30 15:24:08 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,15 @@ t_tetri	*addlink(t_tetri *tetri, char **str, char lastchar, int i)
 		k = 0;
 		while (i < j)
 			tmp->map[k++] = str[i++];
-		tmp->letter = lastchar;
+		tmp->id = lastchar;
 		tmp->next = tetri;
 	}
 	return (tmp);
 }
 
-t_tetri	*place_tetri(char **str, char lastchar)
+t_tetri	*place_tetris(char **str, char lastchar)
 {
 	int i;
-	int j;
 	t_tetri *tetri;
 
 	tetri = NULL;
@@ -66,7 +65,7 @@ int		split(char **tetri, char *str, int i, int k)
 	return (i);
 }
 
-void	ft_getpiece(char *str, char lastchar)
+t_tetri	*ft_getpiece(char *str, char lastchar)
 {
 	int i;
 	int k;
@@ -75,7 +74,7 @@ void	ft_getpiece(char *str, char lastchar)
 	i = 0;
 	k = 0;
 	if (!(tetri = (char **)malloc(sizeof(char *) * ((lastchar - 'A' + 1) * 4) + 1)))
-		return ;
+		return (NULL);
 	while (str[i])
 	{
 		if (str[i - 1] == '\n' && str[i] == '\n')
@@ -85,7 +84,7 @@ void	ft_getpiece(char *str, char lastchar)
 		i++;
 	}
 	tetri[k] = 0;
-	place_tetri(tetri, lastchar);
+	return(place_tetris(tetri, lastchar));
 }
 /*
 int main(void)
@@ -99,14 +98,4 @@ int main(void)
 	ft_getpiece(str,'B');
 	return 0;
 }
-
-typedef struct s_tetri t_tetri;
-
-structs_tetri
-{
-charletter;
-char*map[17];
-t_tetri*next;
-};
-
 */

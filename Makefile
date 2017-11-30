@@ -6,7 +6,7 @@
 #    By: asandolo <asandolo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/15 10:56:13 by asandolo          #+#    #+#              #
-#    Updated: 2017/11/29 15:12:07 by asandolo         ###   ########.fr        #
+#    Updated: 2017/11/30 15:27:07 by vgauther         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,10 @@ BOLDRED=\033[1m\033[31m
 BOLDWHITE=\033[1m\033[37m
 
 NAME = fillit
-SRC = main.c ft_emptymap.c ft_error.c 	
+SRC = main.c ft_emptymap.c ft_error.c ft_getpiece.c ft_config.c ft_realloc.c \
+	  ft_solv.c ft_tools.c ft_direction.c
 OBJ = $(SRC:.c=.o)
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -ggdb
 CC = gcc
 
 all : $(NAME)

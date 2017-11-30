@@ -6,7 +6,7 @@
 /*   By: pcartau <pcartau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 19:18:02 by pcartau           #+#    #+#             */
-/*   Updated: 2017/11/30 11:22:25 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:34:17 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	**ft_emptymap(int size)
 	return (tab);
 }
 
-void	ft_change_size(t_etris *list, size_t size)
+void	ft_change_size(t_tetri *list, size_t size)
 {
 	char	**tetris;
 	int		x;
@@ -47,15 +47,15 @@ void	ft_change_size(t_etris *list, size_t size)
 	y = 0;
 	while (list)
 	{
-		tetris = ft_dupdup(list->tetriminos);
-		list->tetriminos = ft_emptymap((int)size);
+		tetris = ft_dupdup(list->map);
+		list->map = ft_dupdup(ft_emptymap((int)size));
 		while (tetris[y])
 		{
 			x = 0;
 			while (tetris[y][x])
 			{
 				if (tetris[y][x] == list->id)
-					list->tetriminos[y][x] = list->id;
+					list->map[y][x] = list->id;
 				x++;
 			}
 			y++;

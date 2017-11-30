@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 18:13:51 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 13:58:50 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:20:07 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ char	**ft_dupdup(char **src)
 	i = 0;
 	while (src[i])
 		i++;
-	if (!(src = (char **)malloc(sizeof(char *) * (i + 1))))
+	if (!(dst = (char **)malloc(sizeof(char *) * (i + 1))))
 		return (NULL);
 	i = 0;
 	while (src[i])
