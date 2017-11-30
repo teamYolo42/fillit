@@ -6,7 +6,7 @@
 /*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/25 09:34:26 by pcartau           #+#    #+#             */
-/*   Updated: 2017/11/29 15:54:24 by pcartau          ###   ########.fr       */
+/*   Updated: 2017/11/30 14:07:46 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int		test(long it, long n_config)
 
 char	*ft_config(int indice, char *plaque, long n_config, int *tab)
 {
-	int i;
-	char mem;
+	int		i;
+	char	mem;
 
 	mem = 0;
 	if (indice == (tab[0] - 1))
@@ -49,23 +49,3 @@ char	*ft_config(int indice, char *plaque, long n_config, int *tab)
 	}
 	return (0);
 }
-/*
-int main(void)
-{
-	int i;
-	int tab[3];
-	char *plaque;
-
-	i = 1;
-	while (i < 25)
-	{
-		tab[0] = 4;
-		tab[1] = 0;
-		tab[2] = 1;
-		plaque = ft_strdup("ABCD");
-		printf("%s\n", ft_config(0, plaque, i, tab));
-		i++;
-	}
-	return 0;
-}
-*/

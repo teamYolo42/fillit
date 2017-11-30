@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 19:00:04 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 19:48:49 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 14:06:39 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ int		strheight(char **tab)
 
 void	ft_swap(char **tetri, int x, int y, int fnct)
 {
-	char tmp;
-	int target_x;
-	int target_y;
+	char	tmp;
+	int		target_x;
+	int		target_y;
 
 	tmp = tetri[y][x];
 	if (fnct == 42)
@@ -50,28 +50,18 @@ int		ft_right(char **tetri, char c)
 	int height;
 	int y;
 
-	y = 0;
+	y = -1;
 	end = ft_strlen(tetri[0]);
 	height = strheight(tetri);
-
 	while (height >= 0)
-	{
-		if(tetri[height][end] != '.')
+		if (tetri[height--][end] != '.')
 			return (0);
-		height--;
-	}
-	while (tetri[y])
+	while (tetri[++y])
 	{
-		x = 0;
-		while (tetri[y][x])
-		{
-			if(tetri[y][x] == c)
-			{
+		x = -1;
+		while (tetri[y][++x])
+			if (tetri[y][x] == c)
 				ft_swap(tetri, x, y, 42);
-			}
-			x++;
-		}
-		y++;
 	}
 	return (1);
 }
@@ -83,28 +73,18 @@ int		ft_bottom(char **tetri, char c)
 	int height;
 	int y;
 
-	y = 0;
+	y = -1;
 	end = ft_strlen(tetri[0]);
 	height = strheight(tetri);
-
 	while (end >= 0)
-	{
-		if(tetri[height][end] != '.')
+		if (tetri[height][end--] != '.')
 			return (0);
-		end--;
-	}
-	while (tetri[y])
+	while (tetri[++y])
 	{
-		x = 0;
-		while (tetri[y][x])
-		{
-			if(tetri[y][x] == c)
-			{
+		x = -1;
+		while (tetri[y][++x])
+			if (tetri[y][x] == c)
 				ft_swap(tetri, x, y, 101);
-			}
-			x++;
-		}
-		y++;
 	}
 	return (1);
 }

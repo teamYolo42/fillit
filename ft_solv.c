@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 17:55:26 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 11:53:16 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 14:14:45 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,38 +66,31 @@ char	**ft_pull_tetri(char c, t_etris *list)
 
 char	**ft_solv(char *str, int size, char *comb, t_etris *list)
 {
-	char	**map;
-	char	**tetri;
-	char	**tmp_tetri;
-	int		num;
-	int		last_char;
+	t_variable	v;
+	int			num;
+	int			last_char;
 
 	last_char = ft_last_char(str) - 'A' + 1;
-	map = ft_emptymap(size);
+	v.map = ft_emptymap(size);
 	num = 0;
 	while (last_char >= num)
 	{
-		tetri = ft_pull_tetri(comb[num], list);
-		tmp_tetri = ft_dupdup(tetri);
-		while (ft_is_placed(map, num) == 0)
-		{
-			if (can_place(tetri, map))
-			{
-				place_tetri(map, tetri, comb[num]);
-				num++;
-			}
+		v.tetri = ft_pull_tetri(comb[num], list);
+		v.tmp_tetri = ft_dupdup(v.tetri);
+		while (ft_is_placed(v.map, num) == 0)
+			if (can_place(v.tetri, v.map))
+				place_tetri(v.map, v.tetri, comb[num++]);
 			else
 			{
-				if (ft_right(tetri, comb[num]) == 0)
+				if (ft_right(v.tetri, comb[num]) == 0)
 				{
-					tetri = ft_dupdup(tmp_tetri);
-					if (ft_bottom(tetri, comb[num]) == 0)
+					v.tetri = ft_dupdup(v.tmp_tetri);
+					if (ft_bottom(v.tetri, comb[num]) == 0)
 						return (NULL);
 				}
 			}
-		}
 	}
-	return (map);
+	return (v.map);
 }
 
 char	**ft_solve(int size, char *str)
@@ -108,7 +101,6 @@ char	**ft_solve(int size, char *str)
 	char	*plaque;
 	t_etris	*list;
 
-	//list = ft_paul();
 	tab[0] = (ft_last_char(str) - 'A' + 1);
 	tab[1] = 0;
 	tab[2] = 1;
@@ -117,6 +109,7 @@ char	**ft_solve(int size, char *str)
 	map = NULL;
 	while (map == NULL)
 	{
+		ft_change_size(list, size);
 		while (comb != NULL && map == NULL)
 		{
 			comb = ft_config(0, plaque, tab[3], tab);

@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 18:13:51 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 10:52:25 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 13:58:50 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,10 @@ int		ft_is_placed(char **map, int num)
 
 char	*ft_first_comb(char c)
 {
-	int i;
-	int nbr;
-	int x;
-	char *first_comb;
+	int		i;
+	int		nbr;
+	int		x;
+	char	*first_comb;
 
 	nbr = c - 'A' + 1;
 	i = 'A';
