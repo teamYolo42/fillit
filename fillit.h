@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 13:53:44 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 14:16:05 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 14:30:44 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define FILLIT_H
 
 # include <stdlib.h>
-# include <string.h>
 # include <stdio.h>
-# include <unistd.h>
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
@@ -48,5 +46,7 @@ int				ft_is_placed(char **map, int num);
 char			*ft_config(int indice, char *plaque, long n_config, int *tab);
 char			*ft_first_comb(char c);
 void			ft_change_size(t_etris *list, size_t size);
+int				count_map_min(char *str);
+char			**ft_solve(int size, char *str);
 
 #endif

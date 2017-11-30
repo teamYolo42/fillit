@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 15:11:46 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 19:41:41 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 14:30:38 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ char	*ft_read(char *argv)
 
 int		main(int argc, char **argv)
 {
-	char *str;
+	char	*str;
+	int		size;
 
+	size = 0;
 	if (argc != 2)
 	{
 		ft_putstr("./fillit [input a single fillit file]\n");
@@ -39,5 +41,7 @@ int		main(int argc, char **argv)
 		ft_putstr("error\n");
 		return (0);
 	}
+	size = count_map_min(str);
+	ft_solve(size, str);
 	return (0);
 }
