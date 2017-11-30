@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 17:55:26 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 15:43:07 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:55:32 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,10 +101,11 @@ char	**ft_solve(int size, char *str)
 	char	*plaque;
 	t_tetri	*list;
 
-	tab[0] = (ft_last_char(str) - 'A' + 1);
+	tab[0] = (ft_last_char(str) - 'A' + 1 );
 	tab[1] = 0;
 	tab[2] = 1;
 	tab[3] = 1;
+	printf("tab  =%d\n", tab[0]);
 	list = ft_getpiece(str, ft_last_char(str));
 	plaque = ft_first_comb(ft_last_char(str));
 	map = NULL;

@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 15:11:46 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 15:42:02 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:54:45 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_puttab(char **map)
 {
-	int x;
-	int y;
-	char n;
+	int		x;
+	int		y;
+	char	n;
 
 	y = 0;
 	n = '\n';
@@ -49,7 +49,8 @@ int		main(int argc, char **argv)
 {
 	char	*str;
 	int		size;
-	char **map;
+	char	**map;
+
 	size = 0;
 	if (argc != 2)
 	{
@@ -63,6 +64,7 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	size = count_map_min(str);
+	str = ft_convert(str);
 	map = ft_solve(size, str);
 	ft_puttab(map);
 	return (0);

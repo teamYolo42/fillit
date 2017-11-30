@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 13:53:44 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 15:33:30 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:54:13 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ void			ft_change_size(t_tetri *list, size_t size);
 int				count_map_min(char *str);
 char			**ft_solve(int size, char *str);
 t_tetri			*ft_getpiece(char *str, char lastchar);
+char			*ft_convert(char *str);
 
 #endif

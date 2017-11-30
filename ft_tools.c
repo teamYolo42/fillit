@@ -6,7 +6,7 @@
 /*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 18:13:51 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 15:20:07 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 15:51:18 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,7 @@ char	ft_last_char(char *str)
 	i--;
 	while (str[i] == '.' || str[i] == '\n')
 		i--;
+	printf("i = %d\n", i);
+	printf("%c\n", str[i]);
 	return (str[i]);
 }
