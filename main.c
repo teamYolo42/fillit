@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 15:11:46 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 15:54:45 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 19:42:12 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,15 @@ void	ft_puttab(char **map)
 {
 	int		x;
 	int		y;
-	char	n;
 
 	y = 0;
-	n = '\n';
 	while (map[y])
 	{
 		x = 0;
 		while (map[y][x])
 		{
 			ft_putstr(map[y]);
-			write(1, &n, 1);
+			ft_putchar('\n');
 			x++;
 		}
 		y++;
