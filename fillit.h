@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 13:53:44 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/29 20:27:12 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 10:52:39 by vgauther         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ int		ft_right(char **tetris, char c);
 int		ft_bottom(char **tetris, char c);
 char	**ft_dupdup(char **src);
 int		ft_is_placed(char **map, int num);
+char	*ft_config(int indice, char *plaque, long n_config, int *tab);
+char	*ft_first_comb(char c);
 
 #endif
