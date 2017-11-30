@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_getpiece.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcartau <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: pcartau <pcartau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 18:32:50 by pcartau           #+#    #+#             */
-/*   Updated: 2017/11/30 15:56:51 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 16:46:19 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_tetri	*addlink(t_tetri *tetri, char **str, char lastchar, int i)
 {
-	int k;
-	int j;
+	int		k;
+	int		j;
 	t_tetri *tmp;
 
 	j = i + 4;
@@ -25,7 +25,12 @@ t_tetri	*addlink(t_tetri *tetri, char **str, char lastchar, int i)
 	{
 		k = 0;
 		while (i < j)
-			tmp->map[k++] = str[i++];
+		{
+			printf("k = %d i = %d\n", k, i);
+			tmp->map[k] = str[i];
+			k++;
+			i++;
+		}
 		tmp->id = lastchar;
 		tmp->next = tetri;
 	}
@@ -34,8 +39,8 @@ t_tetri	*addlink(t_tetri *tetri, char **str, char lastchar, int i)
 
 t_tetri	*place_tetris(char **str, char lastchar)
 {
-	int i;
-	t_tetri *tetri;
+	int		i;
+	t_tetri	*tetri;
 
 	tetri = NULL;
 	i = 0;
