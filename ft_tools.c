@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 18:13:51 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 17:27:56 by ebertin          ###   ########.fr       */
+/*   Updated: 2017/11/30 19:16:04 by pcartau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		ft_is_placed(char **map, int num)
 	int nbr;
 
 	y = 0;
-	nbr = 0;
+	nbr = 1;
 	while (map[y])
 	{
 		x = 0;
@@ -83,20 +83,19 @@ char	*ft_first_comb(char c)
 {
 	int		i;
 	int		nbr;
-	int		x;
 	char	*first_comb;
 
+	i = 0;
 	nbr = c - 'A' + 1;
-	i = 'A';
-	x = 0;
 	if (!(first_comb = (char *)malloc(sizeof(char) * nbr + 1)))
 		return (NULL);
-	while (nbr > i)
+	while (i < nbr)
 	{
-		first_comb[x] = i;
-		x++;
+		first_comb[i] = c - nbr + 1;
 		i++;
+		c++;
 	}
+	first_comb[i] = '\0';
 	return (first_comb);
 }
 
@@ -108,7 +107,5 @@ char	ft_last_char(char *str)
 	i--;
 	while (str[i] == '.' || str[i] == '\n')
 		i--;
-	printf("i = %d\n", i);
-	printf("%c\n", str[i]);
 	return (str[i]);
 }

@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 17:55:26 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 18:11:35 by root             ###   ########.fr       */
+/*   Updated: 2017/11/30 19:06:07 by pcartau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,13 @@ int		can_place(char **tetri, char **map)
 
 char	**ft_pull_tetri(char c, t_tetri *list)
 {
+	int		i;
 	char	**tetri;
 
-	while (list->id != c && list->next)
+	i = 0;
+	while (list->id != c && list)
 	{
+	//	ft_puttab(list->map);
 		list = list->next;
 	}
 	tetri = list->map;
@@ -68,14 +71,17 @@ char	**ft_solv(char *str, int size, char *comb, t_tetri *list)
 	int			num;
 	int			last_char;
 
+	int x;
+	x= 0;
+
 	last_char = ft_last_char(str) - 'A' + 1;
 	v.map = ft_emptymap(size);
 	num = 0;
 	while (last_char >= num)
 	{
 		v.tetri = ft_pull_tetri(comb[num], list);
-		v.tmp_tetri = ft_dupdup(v.tetri);
 		while (ft_is_placed(v.map, num) == 0)
+		{
 			if (can_place(v.tetri, v.map))
 				place_tetri(v.map, v.tetri, comb[num++]);
 			else
@@ -87,6 +93,7 @@ char	**ft_solv(char *str, int size, char *comb, t_tetri *list)
 						return (NULL);
 				}
 			}
+		}
 	}
 	return (v.map);
 }
@@ -103,9 +110,9 @@ char	**ft_solve(int size, char *str)
 	tab[1] = 0;
 	tab[2] = 1;
 	tab[3] = 1;
-	printf("tab  =%d\n", tab[0]);
 	list = ft_getpiece(str, ft_last_char(str));
 	plaque = ft_first_comb(ft_last_char(str));
+	printf("%s\n", plaque);
 	map = NULL;
 	while (map == NULL)
 	{
