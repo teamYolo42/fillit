@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tools.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vgauther <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 18:13:51 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 15:51:18 by vgauther         ###   ########.fr       */
+/*   Updated: 2017/11/30 17:27:56 by ebertin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ char	*ft_first_comb(char c)
 	nbr = c - 'A' + 1;
 	i = 'A';
 	x = 0;
-	first_comb = (char *)malloc(sizeof(char) * nbr + 1);
+	if (!(first_comb = (char *)malloc(sizeof(char) * nbr + 1)))
+		return (NULL);
 	while (nbr > i)
 	{
 		first_comb[x] = i;
