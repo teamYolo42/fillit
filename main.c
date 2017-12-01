@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 15:11:46 by vgauther          #+#    #+#             */
-/*   Updated: 2017/12/01 10:59:34 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/12/01 12:02:21 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_puttab(char **map)
 
 	x = 0;
 	while (map[x])
-		ft_putstr(map[x++]);
+		ft_putendl(map[x++]);
 }
 
 char	*ft_read(char *argv)
