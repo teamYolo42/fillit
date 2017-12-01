@@ -6,7 +6,7 @@
 /*   By: vgauther <vgauther@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/29 17:55:26 by vgauther          #+#    #+#             */
-/*   Updated: 2017/11/30 19:40:06 by asandolo         ###   ########.fr       */
+/*   Updated: 2017/11/30 19:44:06 by asandolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ char	**ft_pull_tetri(char c, t_tetri *list)
 	i = 0;
 	while (list->id != c && list)
 	{
+		//ft_puttab(list->map);
+		list = list->next;
 	}
 	tetri = list->map;
 	return (tetri);
